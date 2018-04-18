@@ -1,0 +1,1 @@
+SELECT * FROM users Where authid = $1;
