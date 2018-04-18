@@ -1,14 +1,14 @@
-import React from "react";
-import {Link} from "react-router-dom";
-import {connect} from "react-redux";
-import About from './components/About/About';
+// import React, {Component} from "react";
+// import {Link} from "react-router-dom";
+// import {connect} from "react-redux";
+// import About from './components/About/About';
 
-const Header = props => (
-    <div>
-    <div><Link to ="/"><button>Home</button></Link></div>
-    </div>
-);
+// function FavTitle({header}){
+//     return(
+//         <h1>{header}</h1>
+//     )
+// }
 
-{/* // const mapStateToProps = state => ({...state.productReducer}); */}
+// export default FavTitle;
 
-export default Header;
+// export default Header;

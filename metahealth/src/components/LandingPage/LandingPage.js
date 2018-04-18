@@ -26,7 +26,10 @@ render(){
                 <button>login</button>
                 </Link>
             )}
+            
             </div>
+            
+
     );
 }
 }

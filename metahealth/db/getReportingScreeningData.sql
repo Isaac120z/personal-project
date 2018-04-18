@@ -1,0 +1,1 @@
+select * from screening_data ORDER BY date_of_screening DESC WHERE user_id = $1 LIMIT 1;

@@ -8,7 +8,7 @@ const passport = require("passport");
 const app = express();
 
 const {strat,logout,getUser} = require(`${__dirname}/controllers/authCtrl`);
-// const {getScreenigData,updateScreeningData,deleteScreeningData} = require(`${__dirname}/controllers/dataCtrl`);
+const {getScreenigData,updateScreeningData,deleteScreeningData,addScreeningData, getReportingScreeningData} = require(`${__dirname}/controllers/dataCtrl`);
 
 massive(process.env.CONNECTION_STRING)
     .then(db => app.set("db", db))
@@ -70,8 +70,9 @@ passport.serializeUser((user, done) => {
 // Screening Data End Points
   // app.get("/api/screeningdata", getScreeningData);
   // app.update("/api/screeningdata/:id", updateScreeningData);
-  app.post("/api/screeningdata/",addScreeningData);
+  app.post("/api/screeningdata",addScreeningData);
   // app.delete("/api/screeningdata/:id", deleteScreeningData);
+  app.get("/api/screeningdata", getReportingScreeningData);
 
 
 const port = process.env.PORT || 3001;

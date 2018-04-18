@@ -10,8 +10,9 @@ class RegistrationPage extends Component{
             gender: "",
             screeningDate: "",
             triglycerides: '',
-            bloodPressureSystolic: " ",
-            bloodPressureDiastolic: " ",
+            cholesterol: '',
+            bloodPressureSystolic: '',
+            bloodPressureDiastolic: '',
             bloodSugar: ''
         }
         this.handleRegistration = this.handleRegistration.bind(this)
@@ -75,8 +76,9 @@ class RegistrationPage extends Component{
         <div>
             <button value={this.state.gender} onClick={()=> this.handleRegistration('gender', "Male")}>Male</button>
             <button value={this.state.gender} onClick={()=> this.handleRegistration('gender', "Female")}>Female</button>
-            <input placeholder="Date of Screening" value={this.state.screeningDate} onChange={(e) => this.handleRegistration('screeningDate', e.target.value)}/>
+            <input placeholder="Screening date YYYY-DD-MM" value={this.state.screeningDate} onChange={(e) => this.handleRegistration('screeningDate', e.target.value)}/>
             <input placeholder="Triglycerides" value={this.state.triglycerides} onChange={(e) => this.handleRegistration('triglycerides', e.target.value)}/>
+            <input placeholder="Cholesterol" value={this.state.cholesterol} onChange={(e) => this.handleRegistration('cholesterol', e.target.value)}/>
             <input placeholder="Blood Pressure Systolic" value={this.state.bloodPressureSystolic} onChange={(e) => this.handleRegistration('bloodPressureSystolic', e.target.value)}/>
             <input placeholder="Blood Pressure Diastolic" value={this.state.bloodPressureDiastolic} onChange={(e) => this.handleRegistration('bloodPressureDiastolic', e.target.value)}/>
            <input placeholder="Blood Sugar" value={this.state.bloodSugar} onChange={(e) => this.handleRegistration('bloodSugar', e.target.value)}/>
@@ -85,10 +87,11 @@ class RegistrationPage extends Component{
             <button onClick={(e)=> this.props.postFromRegistration(
                     this.state.gender,
                     this.state.screeningDate,
-                    this.state.triglycerides,
-                    this.state.bloodPressureSystolic,
-                    this.state.bloodPressureDiastolic,
-                    this.state.bloodSugar
+                    Number(this.state.triglycerides),
+                    Number(this.state.cholesterol),
+                    Number(this.state.bloodPressureSystolic),
+                    Number(this.state.bloodPressureDiastolic),
+                    Number(this.state.bloodSugar)
             )}>Save</button>
         </div>
   </div>

@@ -1,22 +1,24 @@
 import axios from "axios";
 
 const GET_SCREENINGDATA = "GET_SCREENINGDATA";
+const GET_REPORTINGSCREENINGDATA = "GET_REPORTINGSCREENINGDATA";
 const UPDATE_SCREENINGDATA = "UPDATE_SCREENINGDATA";
 const POST_SCREENINGDATA = "POST_SCREENINGDATA";
 const DELETE_SCREENINGDATA = "DELETE_SCREENINGDATA";
 const POST_REGISTRATION = "POST_REGISTRATION";
 
-export function getScreeningData() {
-    return {
-      type: GET_SCREENINGDATA,
-      payload: axios.get("/api/screeningdata")
-    };
-  }
+// export function getScreeningData() {
+//     return {
+//       type: GET_SCREENINGDATA,
+//       payload: axios.get("/api/screeningdata")
+//     };
+//   }
 
   export function postFromRegistration(
     gender,
     screeningDate,
     triglycerides,
+    cholesterol,
     bloodPressureSystolic,
     bloodPressureDiastolic,
     bloodSugar
@@ -27,6 +29,7 @@ export function getScreeningData() {
         gender,
         screeningDate,
         triglycerides,
+        cholesterol,
         bloodPressureSystolic,
         bloodPressureDiastolic,
         bloodSugar
@@ -34,12 +37,20 @@ export function getScreeningData() {
     }
   }
 
-  export function postScreeningData() {
+  export function getReportingScreeningData(){
     return {
-      type: POST_SCREENINGDATA,
-      payload: axios.post("/api/screeningdata")
+      type: GET_REPORTINGSCREENINGDATA,
+      payload: axios.get("/api/screeningdata",)
     };
   }
+
+
+  // export function postScreeningData() {
+  //   return {
+  //     type: POST_SCREENINGDATA,
+  //     payload: axios.post("/api/screeningdata")
+  //   };
+  // }
 
   // export function updateScreeningData() {
   //   return {
@@ -60,6 +71,7 @@ export function getScreeningData() {
   };
 
   export default function screeningDataReducer(state = initialState, action) {
+    console.log(action.type);
     switch (action.type) {
       case `${GET_SCREENINGDATA}_FULFILLED`:
         return {
@@ -76,17 +88,22 @@ export function getScreeningData() {
           ...state,
           screeningData: action.payload.data
         };
-      case `${POST_SCREENINGDATA}_FULFILLED`:
-      return {
-        ...state,
-        screeningData: action.payload.data
-        };
+      case `${GET_REPORTINGSCREENINGDATA}_FULFILLED`:
+      console.log(action.payload)
+        return {
+          ...state,
+          screeningData: action.payload.data
+      // case `${POST_SCREENINGDATA}_FULFILLED`:
+      // return {
+      //   ...state,
+      //   screeningData: action.payload.data
+      //   };
       
         // case `${POST_REGRISTRATION}_FULFILLED`:
         // return {
         //   ...state,
         //   screeningData: action.payload.data
-        //   };
+        };
 
 
       default:
