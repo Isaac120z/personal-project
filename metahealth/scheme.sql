@@ -22,6 +22,7 @@ CREATE TABLE screening_data (
     id SERIAL PRIMARY KEY,
     gender varchar(10),
     date_of_screening DATE NOT NULL DEFAULT CURRENT_DATE,
+    waist_Circumference float(5),
     triglyceride float(3),
     cholesterol float(3),
     blood_pressure_systolic float(3),

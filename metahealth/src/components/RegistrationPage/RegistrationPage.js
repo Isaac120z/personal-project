@@ -9,6 +9,7 @@ class RegistrationPage extends Component{
         this.state = {
             gender: "",
             screeningDate: "",
+            waistCircumference: "",
             triglycerides: '',
             cholesterol: '',
             bloodPressureSystolic: '',
@@ -77,6 +78,7 @@ class RegistrationPage extends Component{
             <button value={this.state.gender} onClick={()=> this.handleRegistration('gender', "Male")}>Male</button>
             <button value={this.state.gender} onClick={()=> this.handleRegistration('gender', "Female")}>Female</button>
             <input placeholder="Screening date YYYY-DD-MM" value={this.state.screeningDate} onChange={(e) => this.handleRegistration('screeningDate', e.target.value)}/>
+            <input placeholder="Waist Circumference" value={this.state.waistCircumference} onChange={(e) => this.handleRegistration('waistCircumference', e.target.value)}/>
             <input placeholder="Triglycerides" value={this.state.triglycerides} onChange={(e) => this.handleRegistration('triglycerides', e.target.value)}/>
             <input placeholder="Cholesterol" value={this.state.cholesterol} onChange={(e) => this.handleRegistration('cholesterol', e.target.value)}/>
             <input placeholder="Blood Pressure Systolic" value={this.state.bloodPressureSystolic} onChange={(e) => this.handleRegistration('bloodPressureSystolic', e.target.value)}/>
@@ -87,6 +89,7 @@ class RegistrationPage extends Component{
             <button onClick={(e)=> this.props.postFromRegistration(
                     this.state.gender,
                     this.state.screeningDate,
+                    Number(this.state.waistCircumference),
                     Number(this.state.triglycerides),
                     Number(this.state.cholesterol),
                     Number(this.state.bloodPressureSystolic),
@@ -106,6 +109,7 @@ const mapStateToProps = state => {
     return { 
     gender: state.gender,
     screeningDate: state.screeningDate,
+    waistCircumference: state.waistCircumference,
     triglycerides: state.triglycerides,
     bloodPressureSystolic: state.bloodPressureSystolic,
     bloodPressureDiastolic: state.bloodPressureDiastolic,

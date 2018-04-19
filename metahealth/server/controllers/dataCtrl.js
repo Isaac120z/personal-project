@@ -1,19 +1,19 @@
-// const getScreenigData = (req, res) => {
-//     req.app
-//       .get("db")
-//       .getScreeningData()
-//       .then(response => res.status(200).json(response))
-//       .catch(err => res.status(500).json(err));
-//   };
+  const getScreeningData = (req, res) => {
+      req.app
+        .get("db")
+        .getScreeningData([req.user.id])
+        .then(response => res.status(200).json(response))
+        .catch(err => res.status(500).json(err));
+  };
   
   
   const addScreeningData = (req, res) => {
     console.log(req.user, req.body);
     // const { id } = req.user;
-    const { gender, screeningDate, triglycerides, cholesterol, bloodPressureSystolic, bloodPressureDiastolic, bloodSugar} = req.body;
+    const { gender, screeningDate, waistCircumference, triglycerides, cholesterol, bloodPressureSystolic, bloodPressureDiastolic, bloodSugar} = req.body;
     req.app
       .get("db")
-      .addScreeningData([req.user.id, gender, screeningDate, triglycerides, cholesterol, bloodPressureSystolic, bloodPressureDiastolic, bloodSugar])
+      .addScreeningData([req.user.id, gender, screeningDate, waistCircumference, triglycerides, cholesterol, bloodPressureSystolic, bloodPressureDiastolic, bloodSugar])
       .then(response => res.status(200).json(response))
       .catch(err => res.status(500).json(err));
   };
@@ -40,14 +40,15 @@
   // const { gender, screeningDate, triglycerides, cholesterol, bloodPressureSystolic, bloodPressureDiastolic, bloodSugar} = req.body;
   req.app
     .get("db")
-    .getReportingScreeningData([req.user.id, gender, screeningDate, triglycerides, cholesterol, bloodPressureSystolic, bloodPressureDiastolic, bloodSugar])
+    .getReportingScreeningData([req.user.id])
     .then(response => res.status(200).json(response))
     .catch(err => res.status(500).json(err));
 
   module.exports = {
-    // getScreeningData,
+    getScreeningData,
     addScreeningData,
     // updateScreeningData,
     // deleteScreeningData,
     getReportingScreeningData
   };
+
