@@ -6,4 +6,9 @@ blood_pressure_systolic =$4,
 blood_pressure_diastolic =$5, 
 triglyceride =$6, 
 blood_sugar =$7
-where user_id = $9 AND id = $10
+where user_id = $9 AND id = $10;
+
+select *
+from screening_data
+WHERE user_id = $9
+ORDER BY date_of_screening DESC;

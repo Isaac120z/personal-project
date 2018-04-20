@@ -7,6 +7,8 @@ const POST_SCREENINGDATA = "POST_SCREENINGDATA";
 const DELETE_SCREENINGDATA = "DELETE_SCREENINGDATA";
 const POST_REGISTRATION = "POST_REGISTRATION";
 
+// const CHANGE_WAIST = "CHANGE_WAIST";
+
 export function getScreeningData() {
   return {
     type: GET_SCREENINGDATA,
@@ -53,12 +55,12 @@ export function getReportingScreeningData() {
 //   };
 // }
 
-// export function updateScreeningData() {
-//   return {
-//     type: UPDATE_SCREENINGDATA,
-//     payload: axios.put(`/api/screeningdata/${id}`)
-//   };
-// }
+export function updateScreeningData(id) {
+  return {
+    type: UPDATE_SCREENINGDATA,
+    payload: axios.put(`/api/screeningdata/`)
+  };
+}
 
 // export function deleteScreeningData() {
 //   return {
@@ -67,8 +69,17 @@ export function getReportingScreeningData() {
 //   };
 // }
 
+// export function changeWaist(val) {
+//   return {
+//     type: CHANGE_WAIST,
+//     payload: val
+//   };
+// }
 const initialState = {
   screeningData: []
+
+  // newWaist: "",
+  // newCholesterol: ""
 };
 
 export default function screeningDataReducer(state = initialState, action) {
@@ -105,6 +116,11 @@ export default function screeningDataReducer(state = initialState, action) {
         //   ...state,
         //   screeningData: action.payload.data
       };
+    // case CHANGE_WAIST:
+    //   return {
+    //     ...state,
+    //     newWaist: action.payload
+    //   };
 
     default:
       return state;
