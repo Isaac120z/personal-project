@@ -38,10 +38,27 @@ const addScreeningData = (req, res) => {
 
 const updateScreeningData = (req, res) => {
   // console.log(req.user.id, req.params.id);
+  const {
+    waist,
+    cholesterol,
+    triglycerides,
+    bloodPressureDiastolic,
+    bloodPressureSystolic,
+    bloodSugar
+  } = req.body;
   req.app
     .get("db")
-    .updateScreeningData([req.user.id, req.params.id])
-    .then(response => getCart(req, res))
+    .updateScreeningData([
+      waist,
+      cholesterol,
+      triglycerides,
+      bloodPressureDiastolic,
+      bloodPressureSystolic,
+      bloodSugar,
+      req.user.id,
+      req.params.id
+    ])
+    .then(response => res.status(200).json(response))
     .catch(err => res.status(500).json(err));
 };
 

@@ -3,8 +3,8 @@ import axios from "axios";
 import { connect } from "react-redux";
 
 import {
-  getScreeningData
-  // changeWaist
+  getScreeningData,
+  updateScreeningData
 } from "../../ducks/screeningdataReducer";
 
 class UpdateProfilePage extends Component {
@@ -25,6 +25,7 @@ class UpdateProfilePage extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleEditSwitch = this.handleEditSwitch.bind(this);
   }
 
   inputChange(prop, val) {
@@ -52,8 +53,18 @@ class UpdateProfilePage extends Component {
       blood_sugar: this.props.screeningData[index].blood_sugar
     });
   }
+
   handleUpdate() {
-    console.log("THIS IS WHERE I UPDATE MY BACKEND");
+    // console.log("THIS IS WHERE I UPDATE MY BACKEND");
+    this.props.updateScreeningData(
+      this.state.waist_circumference,
+      this.state.cholesterol,
+      this.state.blood_pressure_diastolic,
+      this.state.blood_pressure_systolic,
+      this.state.triglyceride,
+      this.state.blood_sugar,
+      this.props.screeningData[this.state.currIndex].id
+    );
     this.handleEditSwitch();
   }
 
@@ -64,6 +75,7 @@ class UpdateProfilePage extends Component {
       }
     });
   }
+
   render() {
     console.log(this.props);
     return (
@@ -226,6 +238,7 @@ class UpdateProfilePage extends Component {
 
 const mapStateToProps = state => ({ ...state.screeningdataReducer });
 
-export default connect(mapStateToProps, { getScreeningData })(
-  UpdateProfilePage
-);
+export default connect(mapStateToProps, {
+  getScreeningData,
+  updateScreeningData
+})(UpdateProfilePage);

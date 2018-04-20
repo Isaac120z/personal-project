@@ -75,7 +75,7 @@ app.get("/api/me", getUser);
 
 // Screening Data End Points
 app.get("/api/screeningdata", getScreeningData);
-app.put("/api/screeningdata/", updateScreeningData);
+app.put("/api/screeningdata/:id", updateScreeningData);
 app.post("/api/screeningdata", addScreeningData);
 // app.delete("/api/screeningdata/:id", deleteScreeningData);
 app.get("/api/screeningdata/report", getReportingScreeningData);

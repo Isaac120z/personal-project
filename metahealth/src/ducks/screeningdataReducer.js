@@ -55,10 +55,27 @@ export function getReportingScreeningData() {
 //   };
 // }
 
-export function updateScreeningData(id) {
+export function updateScreeningData(
+  waist,
+  cholesterol,
+  triglycerides,
+  bloodPressureSystolic,
+  bloodPressureDiastolic,
+  bloodSugar,
+  id
+) {
+  console.log(id);
+
   return {
     type: UPDATE_SCREENINGDATA,
-    payload: axios.put(`/api/screeningdata/`)
+    payload: axios.put(`/api/screeningdata/${id}`, {
+      waist,
+      cholesterol,
+      triglycerides,
+      bloodPressureDiastolic,
+      bloodPressureSystolic,
+      bloodSugar
+    })
   };
 }
 
@@ -77,9 +94,6 @@ export function updateScreeningData(id) {
 // }
 const initialState = {
   screeningData: []
-
-  // newWaist: "",
-  // newCholesterol: ""
 };
 
 export default function screeningDataReducer(state = initialState, action) {
@@ -101,21 +115,22 @@ export default function screeningDataReducer(state = initialState, action) {
         screeningData: action.payload.data
       };
     case `${GET_REPORTINGSCREENINGDATA}_FULFILLED`:
-      console.log(action.payload);
+      // console.log(action.payload);
       return {
         ...state,
         screeningData: action.payload.data
-        // case `${POST_SCREENINGDATA}_FULFILLED`:
-        // return {
-        //   ...state,
-        //   screeningData: action.payload.data
-        //   };
-
-        // case `${POST_REGRISTRATION}_FULFILLED`:
-        // return {
-        //   ...state,
-        //   screeningData: action.payload.data
       };
+    // case `${POST_SCREENINGDATA}_FULFILLED`:
+    // return {
+    //   ...state,
+    //   screeningData: action.payload.data
+    //   };
+
+    // case `${POST_REGRISTRATION}_FULFILLED`:
+    // return {
+    //   ...state,
+    //   screeningData: action.payload.data
+
     // case CHANGE_WAIST:
     //   return {
     //     ...state,
