@@ -31,6 +31,9 @@ class LandingPage extends Component {
               <Link to="/updateprofile">
                 <button>Update Profile</button>
               </Link>
+              <Link to="/delete">
+                <button>Delete Record</button>
+              </Link>
             </div>
           </div>
         ) : (

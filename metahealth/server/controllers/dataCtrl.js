@@ -62,14 +62,20 @@ const updateScreeningData = (req, res) => {
     .catch(err => res.status(500).json(err));
 };
 
-// const deleteScreeningData = (req, res) => {
-//   // console.log(req.user.id, req.params.id);
-//   req.app
-//     .get("db")
-//     .deleteScreeningData([req.user.id, req.params.id])
-//     .then(response => getCart(req, res))
-//     .catch(err => res.status(500).json(err));
-// };
+const deleteScreeningData = (req, res) => {
+  const { id, user_id } = req.params;
+  // const { user_id } = req.body;
+  // console.log(user_id.user_id);
+  console.log(req.params);
+  req.app
+    .get("db")
+    .deleteScreeningData([id, user_id])
+    .then(response => {
+      console.log(response), res.status(200).json(response);
+      // getReportScreeningData(req.res);
+    })
+    .catch(err => res.status(500).json(err));
+};
 
 const getReportingScreeningData = (req, res) =>
   // const { gender, screeningDate, triglycerides, cholesterol, bloodPressureSystolic, bloodPressureDiastolic, bloodSugar} = req.body;
@@ -83,6 +89,6 @@ module.exports = {
   getScreeningData,
   addScreeningData,
   updateScreeningData,
-  // deleteScreeningData,
+  deleteScreeningData,
   getReportingScreeningData
 };

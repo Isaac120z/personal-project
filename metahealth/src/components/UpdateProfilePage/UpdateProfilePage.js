@@ -77,15 +77,16 @@ class UpdateProfilePage extends Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.screeningData);
+
     return (
       <div>
         <select value={this.state.currIndex} onChange={this.handleChange}>
           {this.props.screeningData.map((val, i) => {
-            // console.log(val);
             return (
               <option key={i} value={i}>
-                {val.date_of_screening}
+                {val.date_of_screening.split("").splice(0, 10)}
+                {/* check for extra 0s */}
               </option>
             );
           })}

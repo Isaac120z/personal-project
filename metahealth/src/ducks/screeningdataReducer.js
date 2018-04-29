@@ -79,25 +79,20 @@ export function updateScreeningData(
   };
 }
 
-// export function deleteScreeningData() {
-//   return {
-//     type: DELETE_SCREENINGDATA,
-//     payload: axios.delete(`/api/screeningdata/${id}`)
-//   };
-// }
+export function deleteScreeningData(user_id, id) {
+  console.log(user_id);
+  return {
+    type: DELETE_SCREENINGDATA,
+    payload: axios.delete(`/api/screeningdata/${id}/${user_id}`)
+  };
+}
 
-// export function changeWaist(val) {
-//   return {
-//     type: CHANGE_WAIST,
-//     payload: val
-//   };
-// }
 const initialState = {
   screeningData: []
 };
 
 export default function screeningDataReducer(state = initialState, action) {
-  console.log(action.type);
+  console.log(action.type, action.payload);
   switch (action.type) {
     case `${GET_SCREENINGDATA}_FULFILLED`:
       return {
@@ -110,6 +105,7 @@ export default function screeningDataReducer(state = initialState, action) {
         screeningData: action.payload.data
       };
     case `${DELETE_SCREENINGDATA}_FULFILLED`:
+      console.log(action.payload.data);
       return {
         ...state,
         screeningData: action.payload.data

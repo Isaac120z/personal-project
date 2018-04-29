@@ -77,7 +77,7 @@ app.get("/api/me", getUser);
 app.get("/api/screeningdata", getScreeningData);
 app.put("/api/screeningdata/:id", updateScreeningData);
 app.post("/api/screeningdata", addScreeningData);
-// app.delete("/api/screeningdata/:id", deleteScreeningData);
+app.delete("/api/screeningdata/:id/:user_id", deleteScreeningData);
 app.get("/api/screeningdata/report", getReportingScreeningData);
 
 const port = process.env.PORT || 3001;
