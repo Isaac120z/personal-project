@@ -144,29 +144,6 @@ class UpdateProfilePage extends Component {
               </div>
 
               <div>
-                <h5>Blood Pressure Diastolic</h5>
-                {this.state.editData ? (
-                  <input
-                    type="number"
-                    value={this.state.blood_pressure_diastolic}
-                    onChange={e =>
-                      this.inputChange(
-                        "blood_pressure_diastolic",
-                        e.target.value
-                      )
-                    }
-                  />
-                ) : (
-                  <div>
-                    {
-                      this.props.screeningData[this.state.currIndex]
-                        .blood_pressure_diastolic
-                    }
-                  </div>
-                )}
-              </div>
-
-              <div>
                 <h5>Blood Pressure Systolic</h5>
                 {this.state.editData ? (
                   <input
@@ -184,6 +161,29 @@ class UpdateProfilePage extends Component {
                     {
                       this.props.screeningData[this.state.currIndex]
                         .blood_pressure_systolic
+                    }
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <h5>Blood Pressure Diastolic</h5>
+                {this.state.editData ? (
+                  <input
+                    type="number"
+                    value={this.state.blood_pressure_diastolic}
+                    onChange={e =>
+                      this.inputChange(
+                        "blood_pressure_diastolic",
+                        e.target.value
+                      )
+                    }
+                  />
+                ) : (
+                  <div>
+                    {
+                      this.props.screeningData[this.state.currIndex]
+                        .blood_pressure_diastolic
                     }
                   </div>
                 )}

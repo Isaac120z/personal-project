@@ -8,7 +8,10 @@ import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
 import ReportingPage from "./components/ReportingPage/ReportingPage";
 import UpdateProfilePage from "./components/UpdateProfilePage/UpdateProfilePage";
 import DeleteRecord from "./components/DeleteRecord/DeleteRecord";
-import Chart from "./components/Chart";
+import CholesterolChart from "./components/Charts/CholesterolChart";
+import WaistCircumferenceChart from "./components/Charts/WaistCircumferenceChart";
+import TriglyceridesChart from "./components/Charts/TriglyceridesChart";
+import BloodSugarChart from "./components/Charts/BloodSugarChart";
 
 export default (
   <Switch>
@@ -17,7 +20,10 @@ export default (
     <Route path="/reporting" component={ReportingPage} />
     <Route path="/updateprofile" component={UpdateProfilePage} />
     <Route path="/delete" component={DeleteRecord} />
-    <Route path="/chart" component={Chart} />
+    <Route path="/cholesterolchart" component={CholesterolChart} />
+    <Route path="/waistchart" component={WaistCircumferenceChart} />
+    <Route path="/triglycerideschart" component={TriglyceridesChart} />
+    <Route path="/bloodsugarchart" component={BloodSugarChart} />
     path="*" render={() => (
       <div>
         <p>Not Found</p>
