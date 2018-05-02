@@ -88,7 +88,8 @@ export function deleteScreeningData(user_id, id) {
 }
 
 const initialState = {
-  screeningData: []
+  screeningData: [],
+  currentScreeningData: []
 };
 
 export default function screeningDataReducer(state = initialState, action) {
@@ -114,7 +115,7 @@ export default function screeningDataReducer(state = initialState, action) {
       // console.log(action.payload);
       return {
         ...state,
-        screeningData: action.payload.data
+        currentScreeningData: action.payload.data
       };
     // case `${POST_SCREENINGDATA}_FULFILLED`:
     // return {

@@ -1,0 +1,69 @@
+/* .reporting-form {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 40% 20% 40%;
+} */
+
+.high-risk {
+  background-color: yellow;
+}
+
+.date-of-screening-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.waist-circumference-wrapper {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+
+.triglycerides-wrapper {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: purple;
+  text-align: center; */
+  /* grid-column-start: 1;
+  grid-column-end: 4;
+  text-shadow: 0 1px 0 black;
+  justify-self: stretch;
+  text-align: center;
+  background-color: blue; */
+}
+
+.cholesterol-wrapper {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+
+.blood-pressure-wrapper {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+
+.blood-sugar-wrapper {
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+}
+
+.low-risk {
+  background-color: rgb(115, 115, 170);
+}
+
+/* .screening-chart-title {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-shadow: 0 1px 0 black;
+  justify-self: stretch;
+  text-align: center;
+  background-color: blue;
+  padding: 10px;
+} */
+
+/* .chart-design {
+  margin: 100%;
+} */

@@ -12,6 +12,7 @@ import CholesterolChart from "./components/Charts/CholesterolChart";
 import WaistCircumferenceChart from "./components/Charts/WaistCircumferenceChart";
 import TriglyceridesChart from "./components/Charts/TriglyceridesChart";
 import BloodSugarChart from "./components/Charts/BloodSugarChart";
+import BloodPressureChart from "./components/Charts/BloodPressureChart";
 
 export default (
   <Switch>
@@ -24,6 +25,7 @@ export default (
     <Route path="/waistchart" component={WaistCircumferenceChart} />
     <Route path="/triglycerideschart" component={TriglyceridesChart} />
     <Route path="/bloodsugarchart" component={BloodSugarChart} />
+    <Route path="/bloodpressurechart" component={BloodPressureChart} />
     path="*" render={() => (
       <div>
         <p>Not Found</p>

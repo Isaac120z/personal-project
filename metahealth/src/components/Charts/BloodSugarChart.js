@@ -4,6 +4,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { getScreeningData } from "../../ducks/screeningdataReducer";
 import _ from "lodash.map";
+import ChartDesign from "./ChartDesign.css";
 
 class BloodSugarChart extends Component {
   constructor(props) {
@@ -73,6 +74,18 @@ class BloodSugarChart extends Component {
           options={{
             maintainAspectRatio: false,
             scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true
+                  },
+                  scaleLabel: {
+                    display: true,
+                    labelString: "mg/dL",
+                    fontSize: 20
+                  }
+                }
+              ],
               xAxes: [
                 {
                   type: "time",
@@ -87,7 +100,7 @@ class BloodSugarChart extends Component {
             title: {
               display: true,
               text: "Blood Sugar Levels By Year",
-              fontSize: 25
+              fontSize: 22
             },
             legend: {
               display: true,

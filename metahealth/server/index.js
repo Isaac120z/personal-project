@@ -67,7 +67,7 @@ app.get(
   "/auth",
   passport.authenticate("auth0", {
     successRedirect: "http://localhost:3000/#/",
-    failureRedirect: "http://localhost:3001/#/login"
+    failureRedirect: "http://localhost:3000/#/"
   })
 );
 app.get("/logout", logout);

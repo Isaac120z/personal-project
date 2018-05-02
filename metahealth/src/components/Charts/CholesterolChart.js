@@ -4,6 +4,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { getScreeningData } from "../../ducks/screeningdataReducer";
 import _ from "lodash.map";
+import ChartDesign from "./ChartDesign.css";
 
 class CholesterolChart extends Component {
   constructor(props) {
@@ -99,6 +100,18 @@ class CholesterolChart extends Component {
           options={{
             maintainAspectRatio: false,
             scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true
+                  },
+                  scaleLabel: {
+                    display: true,
+                    labelString: "mg/dL",
+                    fontSize: 20
+                  }
+                }
+              ],
               xAxes: [
                 {
                   type: "time",
@@ -113,7 +126,7 @@ class CholesterolChart extends Component {
             title: {
               display: true,
               text: "HDL Cholesterol Levels By Year",
-              fontSize: 25
+              fontSize: 22
             },
             legend: {
               display: true,
