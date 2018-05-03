@@ -1,7 +1,25 @@
-// import React from 'react';
+import React, { Component } from "react";
+import AboutStyle from "./AboutStyle.css";
+import { withGoogleMap, GoogleMap } from "react-google-maps";
 
-// const AboutPage = () => {
-//     <div> About Page </div>
-// };
+class AboutPage extends Component {
+  render() {
+    return <div>test</div>;
+  }
+}
 
-// export default AboutPage;
+export default AboutPage;
+
+//   const GoogleMapExample = withGoogleMap(props => (
+//       <GoogleMap
+//         defatultCenter={{ lat: 40.756795, lng: -73.954298 }}
+//         defaultZoom={13}
+//       />
+//     ));
+
+// <div>
+//         <GoogleMapExample
+//           containerElement={<div style={{ height: `500px`, width: "500px" }} />}
+//           mapElement={<div style={{ height: `100%` }} />}
+//         />
+//       </div>

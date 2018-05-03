@@ -34,9 +34,6 @@ class BloodPressureChart extends Component {
             .splice(0, 10)
             .join(""))
       );
-      console.log(BloodPressureSystolicData);
-      console.log(BloodPressureDiastolicData);
-      console.log(screeningDate);
 
       const chartData = {
         labels: screeningDate,
@@ -62,7 +59,7 @@ class BloodPressureChart extends Component {
             pointHoverBorderWidth: 2,
             pointRadius: 4,
             pointHitRadius: 7,
-            backgroundColor: ["blue"]
+            backgroundColor: ["#92A99E"]
           },
           {
             label: "Blood Pressure Diastolic mmHg",
@@ -70,7 +67,7 @@ class BloodPressureChart extends Component {
             fill: false,
             lineTension: 0.1,
             backgroundColor: "rgba(75,192,192,0.4)",
-            borderColor: "red",
+            borderColor: "#3A2936",
             borderCapStyle: "butt",
             borderDash: [],
             borderDashOffset: 0.0,
@@ -84,7 +81,7 @@ class BloodPressureChart extends Component {
             pointHoverBorderWidth: 2,
             pointRadius: 4,
             pointHitRadius: 7,
-            backgroundColor: ["red"]
+            backgroundColor: ["#66656F"]
           }
         ]
       };
@@ -93,7 +90,6 @@ class BloodPressureChart extends Component {
   }
 
   render() {
-    console.log(this.props.screeningData);
     return (
       <div className="chart">
         <Line

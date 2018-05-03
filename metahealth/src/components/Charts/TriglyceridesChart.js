@@ -31,8 +31,6 @@ class TriglyceridesChart extends Component {
             .splice(0, 10)
             .join(""))
       );
-      console.log(triglycerideData);
-      console.log(screeningDate);
 
       const chartData = {
         labels: screeningDate,
@@ -42,7 +40,7 @@ class TriglyceridesChart extends Component {
             data: triglycerideData,
             fill: true,
             lineTension: 0.1,
-            backgroundColor: "rgba(75,192,192,0.4)",
+            backgroundColor: "#92A99E",
             borderColor: "rgba(75,192,192,1)",
             borderCapStyle: "butt",
             borderDash: [],
@@ -57,7 +55,7 @@ class TriglyceridesChart extends Component {
             pointHoverBorderWidth: 2,
             pointRadius: 4,
             pointHitRadius: 7,
-            backgroundColor: ["red"]
+            backgroundColor: ["#92A99E"]
           }
         ]
       };
@@ -66,7 +64,6 @@ class TriglyceridesChart extends Component {
   }
 
   render() {
-    console.log(this.props.screeningData);
     return (
       <div className="chart">
         <Line

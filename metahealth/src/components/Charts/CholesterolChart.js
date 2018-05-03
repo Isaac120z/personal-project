@@ -31,8 +31,6 @@ class CholesterolChart extends Component {
             .splice(0, 10)
             .join(""))
       );
-      console.log(cholesterolData);
-      console.log(screeningDate);
 
       const chartData = {
         labels: screeningDate,
@@ -47,7 +45,7 @@ class CholesterolChart extends Component {
             // data: [25, 33, 45, 80, 75],
             fill: true,
             lineTension: 0.1,
-            backgroundColor: "rgba(75,192,192,0.4)",
+            backgroundColor: "#92A99E",
             borderColor: "rgba(75,192,192,1)",
             borderCapStyle: "butt",
             borderDash: [],
@@ -56,13 +54,13 @@ class CholesterolChart extends Component {
             pointBorderColor: "rgba(75,192,192,1)",
             pointBackgroundColor: "#fff",
             pointBorderWidth: 1,
-            pointHoverRadius: 5,
+            pointHoverRadius: 10,
             pointHoverBackgroundColor: "rgba(75,192,192,1)",
             pointHoverBorderColor: "rgba(220,220,220,1)",
             pointHoverBorderWidth: 2,
             pointRadius: 4,
             pointHitRadius: 7,
-            backgroundColor: ["red"]
+            backgroundColor: ["#92A99E"]
           }
         ]
       };
@@ -92,7 +90,6 @@ class CholesterolChart extends Component {
   // }
 
   render() {
-    console.log(this.props.screeningData);
     return (
       <div className="chart">
         <Line

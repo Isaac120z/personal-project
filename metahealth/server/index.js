@@ -6,6 +6,14 @@ const session = require("express-session");
 const massive = require("massive");
 const passport = require("passport");
 const app = express();
+const SERVER_CONFIGS = require("./constants/server");
+
+const configureServer = require("./server");
+const configureRoutes = require("./routes");
+const paymentApi = require("./routes/payment");
+
+configureServer(app);
+configureRoutes(app);
 
 const { strat, logout, getUser } = require(`${__dirname}/controllers/authCtrl`);
 const {

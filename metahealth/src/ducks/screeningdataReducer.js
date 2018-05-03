@@ -93,7 +93,6 @@ const initialState = {
 };
 
 export default function screeningDataReducer(state = initialState, action) {
-  console.log(action.type, action.payload);
   switch (action.type) {
     case `${GET_SCREENINGDATA}_FULFILLED`:
       return {

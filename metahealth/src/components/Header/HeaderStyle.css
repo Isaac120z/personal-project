@@ -1,0 +1,13 @@
+.header-bar {
+  background-color: #3a2936;
+  overflow: hidden;
+  position: fixed;
+  color: white;
+  font-size: 25px;
+  /* height: 70px; */
+  width: 100%;
+}
+
+.logo {
+  color: #fcf9e0;
+}

@@ -1,26 +1,45 @@
-/* .reporting-form {
+.reporting-form {
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-  grid-template-rows: 40% 20% 40%;
-} */
+  grid-template-columns: 10% 75% 10%;
+  justify-content: space-between;
+}
+
+.screening-chart-title {
+  /* grid-template-columns: 40% 30% 30%; */
+  /* border: 0.1rem outset black; */
+  font-size: 20px;
+  align-self: center;
+  margin-top: 120px;
+  margin-bottom: 20px;
+}
 
 .high-risk {
-  background-color: yellow;
+  background-color: #cfb396;
+}
+
+.low-risk {
+  background-color: #d2d8bd;
 }
 
 .date-of-screening-wrapper {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% 30% 30%;
+  border: 0.1rem outset black;
+  background-color: #92a99e;
+  color: white;
+  border-top-left-radius: 2px;
 }
 
 .waist-circumference-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
+  border: 0.1rem outset black;
 }
 
 .triglycerides-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
+  border: 0.1rem outset black;
   /* grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -38,20 +57,19 @@
 .cholesterol-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
+  border: 0.1rem outset black;
 }
 
 .blood-pressure-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
+  border: 0.1rem outset black;
 }
 
 .blood-sugar-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
-}
-
-.low-risk {
-  background-color: rgb(115, 115, 170);
+  border: 0.1rem outset black;
 }
 
 /* .screening-chart-title {
@@ -67,3 +85,40 @@
 /* .chart-design {
   margin: 100%;
 } */
+
+.high-risk-recommendation {
+  border: 2px outset #d76740;
+  border-radius: 5px;
+  /* box-shadow: 0 0 0 1px #a8bf9c; */
+  outline-offset: 0.5rem;
+  padding: 15px;
+  margin: 5%;
+  font-family: "Lucida Sans";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  background-color: #fffffd;
+}
+
+.mets-script {
+  border: 2px outset #e5d8bb;
+  border-radius: 5px;
+  font-family: "Lucida Sans";
+  margin: 2%;
+  padding: 15px;
+  background-color: #fffffd;
+}
+
+.graph-script {
+  /* border: 0.5rem outset #274a53;
+  box-shadow: 0 0 0 1px skyblue; */
+  font-family: "Lucida Sans";
+  /* background-color: #fffffd; */
+  /* border-radius: 10px; */
+}
+
+.chart {
+  margin: 5px;
+  padding: 1px;
+}

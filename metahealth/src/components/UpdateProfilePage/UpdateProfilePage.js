@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
+import UpdateProfilePageStyle from "./UpdateProfilePageStyle.css";
 
 import {
   getScreeningData,
@@ -80,7 +81,7 @@ class UpdateProfilePage extends Component {
     console.log(this.props.screeningData);
 
     return (
-      <div>
+      <div className="update-box">
         <select value={this.state.currIndex} onChange={this.handleChange}>
           {this.props.screeningData.map((val, i) => {
             return (

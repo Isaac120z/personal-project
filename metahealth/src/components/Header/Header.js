@@ -1,14 +1,36 @@
-// import React, {Component} from "react";
-// import {Link} from "react-router-dom";
-// import {connect} from "react-redux";
-// import About from './components/About/About';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import HeaderStyle from "./HeaderStyle.css";
+import { getUser } from "../../ducks/userReducer";
 
-// function FavTitle({header}){
-//     return(
-//         <h1>{header}</h1>
-//     )
-// }
+class Header extends Component {
+  componentDidMount() {
+    this.props.getUser();
+  }
 
-// export default FavTitle;
+  render() {
+    return (
+      <div className="header-bar">
+        <div className="logo"> Meta-Health </div>
+        {this.props.user.name ? (
+          <div>
+            <a href={process.env.REACT_APP_LOGOUT}>
+              <button>Logout</button>
+            </a>
+          </div>
+        ) : (
+          <div>
+            <a href={process.env.REACT_APP_LOGIN}>
+              <button>Login</button>
+            </a>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
-// export default Header;
+const mapStateToProps = state => ({ ...state.userReducer });
+
+export default connect(mapStateToProps, { getUser })(Header);
