@@ -17,7 +17,8 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="landing-page">
+        <div>test</div>
         {this.props.currentScreeningData.map((val, i) => (
           <div key={i}>
             <div className="welcome"> Welcome {val.name}</div>

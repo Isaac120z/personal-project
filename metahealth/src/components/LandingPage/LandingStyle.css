@@ -1,11 +1,15 @@
 body {
-  background: url(background.jpg);
+  background: url("./background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  position: relative;
 }
 
 .landing-page {
   margin-top: 50px;
+  color: black;
 }
 
 .link-wrap {
-  margin-top: 50px;
+  margin-top: 100px;
 }
