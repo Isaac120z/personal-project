@@ -101,8 +101,8 @@ class ReportingPage extends Component {
                   Blood Pressure Systolic / Diastolic{" "}
                 </div>
                 <div className="screening-value">
-                  {val.blood_pressure_systolic} / {val.blood_pressure_diastolic}mm
-                  Hg
+                  {val.blood_pressure_systolic} / {val.blood_pressure_diastolic}{" "}
+                  mm Hg
                 </div>
 
                 {val.blood_pressure_systolic >= 130 ||

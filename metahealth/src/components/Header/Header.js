@@ -13,16 +13,22 @@ class Header extends Component {
     return (
       <div className="header-bar">
         <div className="logo"> Meta-Health </div>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/about">
+          <button>About</button>
+        </Link>
         {this.props.user.name ? (
           <div>
             <a href={process.env.REACT_APP_LOGOUT}>
-              <button>Logout</button>
+              <button className="Logout">Logout</button>
             </a>
           </div>
         ) : (
           <div>
             <a href={process.env.REACT_APP_LOGIN}>
-              <button>Login</button>
+              <button className="login">Login</button>
             </a>
           </div>
         )}

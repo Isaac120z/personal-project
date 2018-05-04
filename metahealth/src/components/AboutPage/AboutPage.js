@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import AboutStyle from "./AboutStyle.css";
 import { withGoogleMap, GoogleMap } from "react-google-maps";
+import Checkout from "../Checkout/Checkout";
 
 class AboutPage extends Component {
   render() {
-    return <div>test</div>;
+    return (
+      <div>
+        <div className="donate-button">
+          <Checkout
+            name={"Help improve our site!"}
+            description={"Thank you for your contribution!"}
+            amount={1}
+          />
+        </div>
+      </div>
+    );
   }
 }
 

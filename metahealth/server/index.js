@@ -6,6 +6,8 @@ const session = require("express-session");
 const massive = require("massive");
 const passport = require("passport");
 const app = express();
+
+app.use(express.static(`${__dirname}/../build`));
 const SERVER_CONFIGS = require("./constants/server");
 
 const configureServer = require("./server");
@@ -90,6 +92,11 @@ app.get("/api/screeningdata/report", getReportingScreeningData);
 
 const port = process.env.PORT || 3001;
 
-app.listen(port, () => {
-  console.log(`Listening at port ${port}`);
+const path = require("path");
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "/../build/index.html"));
 });
+
+// app.listen(port, () => {
+//   console.log(`Listening at port ${port}`);
+// });

@@ -1,7 +1,11 @@
-.link-wrap {
+body {
+  background: url(background.jpg);
+}
+
+.landing-page {
   margin-top: 50px;
 }
 
-.donate-button {
-  float: right;
+.link-wrap {
+  margin-top: 50px;
 }
