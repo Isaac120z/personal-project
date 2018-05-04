@@ -7,8 +7,6 @@ const massive = require("massive");
 const passport = require("passport");
 const app = express();
 
-//use for production
-// app.use(express.static(`${__dirname}/../build`));
 const SERVER_CONFIGS = require("./constants/server");
 
 const configureServer = require("./server");
@@ -31,6 +29,8 @@ massive(process.env.CONNECTION_STRING)
   .then(db => app.set("db", db))
   .catch(err => console.log(err));
 
+//use for production
+app.use(express.static(`${__dirname}/../build`));
 app.use(json());
 app.use(cors());
 
@@ -93,11 +93,11 @@ app.get("/api/screeningdata/report", getReportingScreeningData);
 
 const port = process.env.PORT || 3001;
 
-//use for production
-// const path = require("path");
-// app.get("*", (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "/../build/index.html"));
-// });
+// use for production
+const path = require("path");
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "/../build/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Listening at port ${port}`);
