@@ -30,7 +30,8 @@ massive(process.env.CONNECTION_STRING)
   .catch(err => console.log(err));
 
 //use for production
-app.use(express.static(`${__dirname}/../build`));
+// app.use(express.static(`${__dirname}/../build`));
+
 app.use(json());
 app.use(cors());
 
@@ -77,7 +78,7 @@ passport.deserializeUser((user, done) => {
 app.get(
   "/auth",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/",
+    successRedirect: "http://localhost:3000/#/loginlanding",
     failureRedirect: "http://localhost:3000/#/"
   })
 );
@@ -94,10 +95,10 @@ app.get("/api/screeningdata/report", getReportingScreeningData);
 const port = process.env.PORT || 3001;
 
 // use for production
-const path = require("path");
-app.get("*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "/../build/index.html"));
-});
+// const path = require("path");
+// app.get("*", (req, res, next) => {
+//   res.sendFile(path.join(__dirname, "/../build/index.html"));
+// });
 
 app.listen(port, () => {
   console.log(`Listening at port ${port}`);

@@ -5,25 +5,42 @@ import LandingStyle from "./LandingStyle.css";
 import { getReportingScreeningData } from "../../ducks/screeningdataReducer";
 // import { getUser } from "../../ducks/userReducer";
 import Checkout from "../Checkout/Checkout";
+import Paper from "material-ui/Paper";
 
 class LandingPage extends Component {
-  constructor() {
-    super();
-  }
-
-  componentDidMount() {
-    this.props.getReportingScreeningData();
-  }
-
   render() {
     return (
       <div className="landing-page">
-        <div>test</div>
-        {this.props.currentScreeningData.map((val, i) => (
-          <div key={i}>
-            <div className="welcome"> Welcome {val.name}</div>
+        <div className="bold-statement">Keep Track Of Your Health!</div>
+        <div className="info-box">
+          <div className="box-one">
+            <div />
+            <div className="text-one">
+              A place to keep your medical records{" "}
+            </div>
+            <div className="text-two">
+              You may change medical providers, but you will always have your
+              health stats with you.
+            </div>
           </div>
-        ))}
+          <div className="box-two">
+            <div />
+            <div className="text-one">Understand your health risks</div>
+            <div className="text-two">
+              Enter biometric screening results from your annual physical and
+              access immmediate healh risk data.
+            </div>
+          </div>
+
+          <div className="box-three">
+            <div />
+            <div className="text-one">View charts of year over year data </div>
+            <div className="text-two">
+              Review past screening data showing trends to help you identify
+              improvment.
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

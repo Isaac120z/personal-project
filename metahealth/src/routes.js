@@ -15,6 +15,7 @@ import BloodSugarChart from "./components/Charts/BloodSugarChart";
 import BloodPressureChart from "./components/Charts/BloodPressureChart";
 import AboutPage from "./components/AboutPage/AboutPage";
 import AdminPage from "./components/AdminPage/AdminPage";
+import LoginLanding from "./components/LoginLanding/LoginLanding";
 
 export default (
   <Switch>
@@ -30,6 +31,7 @@ export default (
     <Route path="/bloodpressurechart" component={BloodPressureChart} />
     <Route path="/about" component={AboutPage} />
     <Route path="/adminpage" component={AdminPage} />
+    <Route path="/loginlanding" component={LoginLanding} />
     path="*" render={() => (
       <div>
         <p>Not Found</p>
