@@ -26,6 +26,9 @@ class Header extends Component {
           </Link>
           {this.props.user.name ? (
             <div>
+              <Link to="/loginlanding">
+                <button className="login-home-page">NAV PAGE</button>
+              </Link>
               <a href={process.env.REACT_APP_LOGOUT}>
                 <button className="Logout">Logout</button>
               </a>

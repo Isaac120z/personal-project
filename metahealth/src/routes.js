@@ -16,6 +16,7 @@ import BloodPressureChart from "./components/Charts/BloodPressureChart";
 import AboutPage from "./components/AboutPage/AboutPage";
 import AdminPage from "./components/AdminPage/AdminPage";
 import LoginLanding from "./components/LoginLanding/LoginLanding";
+import PaperChart from "./components/PaperCharts/PaperChart";
 
 export default (
   <Switch>
@@ -32,6 +33,7 @@ export default (
     <Route path="/about" component={AboutPage} />
     <Route path="/adminpage" component={AdminPage} />
     <Route path="/loginlanding" component={LoginLanding} />
+    <Route path="/paperchart" component={PaperChart} />
     path="*" render={() => (
       <div>
         <p>Not Found</p>

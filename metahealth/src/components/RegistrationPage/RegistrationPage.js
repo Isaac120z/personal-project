@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import RegistrationStyle from "./RegistrationStyle.css";
+import { Link } from "react-router-dom";
+import FlatButton from "material-ui/FlatButton";
 
 import { postFromRegistration } from "../../ducks/screeningdataReducer";
 
@@ -18,13 +20,6 @@ class RegistrationPage extends Component {
       bloodSugar: ""
     };
     this.handleRegistration = this.handleRegistration.bind(this);
-    // this.updateGender= this.updateGender.bind(this);
-    // this.updateScreeningDate = this.updateScreeningDate.bind(this);
-    // this.updateTriglycerides = this.updateTriglycerides.bind(this);
-    // this.updateBloodPressureSystolic =  this.updateBloodPressureSystolic.bind(this);
-    // this.updateBloodPressureDiastolic = this.updateBloodPressureDiastolic.bind(this);
-    // this.updateScreeningDate = this.updateScreeningDate.bind(this);
-    // this.updateScreeningDate = this.updateScreeningDate.bind(this);
   }
 
   handleRegistration(prop, val) {
@@ -32,45 +27,15 @@ class RegistrationPage extends Component {
       [prop]: val
     });
   }
-  //  updateGender(val){
-  //     this.setState({
-  //         gender: val
-  //     })
-  // }
-  // updateScreeningDate(val){
-  //     this.setState({
-  //         screeningDate: val
-  //     })
-  // }
-  // updateTriglycerides(val){
-  //     this.setState({
-  //         triglycerides: val
-  //     })
-  // }
-
-  // updateBloodPressureSystolic(val){
-  //     this.setState({
-  //         bloodPressureSystolic: val
-  //     })
-  // }
-  // updateBloodPressureDiastolic(val){
-  //     this.setState({
-  //         bloodPressureDiastolic: val
-  //     })
-  // }
-
-  // updateBloodSugar(val){
-  //     this.setState({
-  //         bloodSugar: val
-  //     })
-  // }
 
   render() {
-    // let {updateGender,updateScreeningDate,updateTriglycerides,updateBloodPressureSystolic,updateBloodPressureDiastolic,updateBloodSugar} = this.state;
     return (
-      <div className="registration-box">
+      <div className="registration-page">
+        <Link to="/loginlanding">
+          <FlatButton label="Back to Nav Page" primary={true} />
+        </Link>
         <div className="registration-box">
-          <p>Registration Box</p>
+          <p>Enter New Screening Data</p>
         </div>
         <div>
           <button

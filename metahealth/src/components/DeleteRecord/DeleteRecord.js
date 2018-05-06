@@ -5,6 +5,7 @@ import swal from "sweetalert";
 import RaisedButton from "material-ui/RaisedButton";
 import SelectField from "material-ui/SelectField";
 import MenuItem from "material-ui/MenuItem";
+import DeleteRecordStyle from "./DeleteRecordStyle.css";
 
 import {
   getScreeningData,
@@ -21,7 +22,7 @@ class DeleteRecord extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.confirmScreen = this.confirmScreen.bind(this);
-    this.handleChange = (event, idex, value) => this.setState({ value });
+    //// this.handleChange = (event, idex, value) => this.setState({ value });
   }
 
   handleChange(event) {
@@ -49,30 +50,28 @@ class DeleteRecord extends Component {
         swal("No changes made!");
       }
     });
-    console.log(this.state.currScreening);
   }
   componentDidMount() {
     this.props.getScreeningData();
     //grabs database and stores it in screeningData
   }
   render() {
-    console.log(this.props.screeningData);
-    console.log(this.state.currScreening);
-    console.log();
     return (
-      <div>
+      <div className="delete-page">
         Select Screening Date
-        <selectField value={this.state.currIndex} onChange={this.handleChange}>
+        <select value={this.state.currIndex} onChange={this.handleChange}>
           {console.log(this.props.screeningData)}
           {this.props.screeningData.map((val, i) => {
             return (
               <option key={i} value={i}>
-                {console.log(val.date_of_screening.split("").splice(0, 10))}
-                {val.date_of_screening.split("").splice(0, 10)}
+                {val.date_of_screening
+                  .split("")
+                  .splice(0, 10)
+                  .join("")}
               </option>
             );
           })}
-        </selectField>
+        </select>
         {/* <button
           onClick={() =>
             this.props.deleteScreeningData(
@@ -83,18 +82,19 @@ class DeleteRecord extends Component {
         >
           Delete Record
         </button> */}
-        <RaisedButton onClick={() => this.confirmScreen()} label="Delete" />
-        <div>
+        <div className="delete-box">
           {this.props.screeningData[this.state.currIndex] ? (
             <div>
-              <div>
+              <div className="box screening-date">
                 <h5>Screening Date</h5>
-                {
-                  this.props.screeningData[this.state.currIndex]
-                    .date_of_screening
-                }
+                {this.props.screeningData[
+                  this.state.currIndex
+                ].date_of_screening
+                  .split("")
+                  .splice(0, 10)
+                  .join("")}
               </div>
-              <div>
+              <div className="box waist-circumference">
                 <h5>Waist Circumference</h5>
                 <div>
                   {
@@ -104,24 +104,21 @@ class DeleteRecord extends Component {
                 </div>
               </div>
 
-              <div>
+              <div className="box triglyceride">
+                <h5>Triglyceride</h5>
+                <div>
+                  {this.props.screeningData[this.state.currIndex].triglyceride}
+                </div>
+              </div>
+
+              <div className="box cholesterol">
                 <h5>Cholesterol</h5>
                 <div>
                   {this.props.screeningData[this.state.currIndex].cholesterol}
                 </div>
               </div>
 
-              <div>
-                <h5>Blood Pressure Diastolic</h5>
-                <div>
-                  {
-                    this.props.screeningData[this.state.currIndex]
-                      .blood_pressure_diastolic
-                  }
-                </div>
-              </div>
-
-              <div>
+              <div className="box blood-pressure-sys">
                 <h5>Blood Pressure Systolic</h5>
                 <div>
                   {
@@ -131,19 +128,26 @@ class DeleteRecord extends Component {
                 </div>
               </div>
 
-              <div>
-                <h5>Triglyceride</h5>
+              <div className="box blood-pressure-dia">
+                <h5>Blood Pressure Diastolic</h5>
                 <div>
-                  {this.props.screeningData[this.state.currIndex].triglyceride}
+                  {
+                    this.props.screeningData[this.state.currIndex]
+                      .blood_pressure_diastolic
+                  }
                 </div>
               </div>
 
-              <div>
+              <div className="box blood-sugar">
                 <h5>Blood Sugar</h5>
                 <div>
                   {this.props.screeningData[this.state.currIndex].blood_sugar}
                 </div>
               </div>
+              <RaisedButton
+                onClick={() => this.confirmScreen()}
+                label="Delete"
+              />
             </div>
           ) : (
             "No data"

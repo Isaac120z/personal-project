@@ -19,7 +19,6 @@ class LoginLanding extends Component {
   render() {
     console.log(this.props.currentScreeningData);
     return (
-      //   <div className="test"> test</div>
       <div className="login-page">
         {this.props.currentScreeningData.map((val, i) => (
           <div key={i}>
@@ -38,15 +37,15 @@ class LoginLanding extends Component {
           </div>
         ))}
 
-        <div className="bold-statement-login-landing">
-          Keep Track Of Your Health!
+        <div className="nav-statement">
+          Choose one of the navigation options below.
         </div>
         <div className="info-box">
           <div className="box-one">
             <div />
             <div className="text-one">Enter new screening data</div>
             <Link to="/Registration">
-              <button className="text-two">New Record Page</button>
+              <button className="text-two">Create Record</button>
             </Link>
           </div>
           <div className="box-two">

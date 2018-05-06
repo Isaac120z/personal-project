@@ -6,48 +6,69 @@ import BloodSugarChart from "../Charts/BloodSugarChart";
 import CholesterolChart from "../Charts/CholesterolChart";
 import WaistCircumferenceChart from "../Charts/WaistCircumferenceChart";
 import TriglyceridesChart from "../Charts/TriglyceridesChart";
+import { Link } from "react-router-dom";
+import PaperChart from "../PaperCharts/PaperChart";
+import FlatButton from "material-ui/FlatButton";
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from "material-ui/Table";
 
 import ReportingPageStyle from "./ReportingPageStyle.css";
 
 import { getReportingScreeningData } from "../../ducks/screeningdataReducer";
 
 class ReportingPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      chart: ""
+    };
+  }
   componentDidMount() {
     this.props.getReportingScreeningData();
   }
+  handleClick(val) {
+    this.setState({ chart: val });
+  }
 
   render() {
-    console.log(this.props.currentScreeningData);
+    console.log(this.state.chart);
 
     return (
-      <div className="reporting-form">
-        <div className="screening-chart-title">
-          Review your most recent screening data discuss any high risk results
-          with your doctor.
-        </div>
-        <div>
+      <div className="reporting-page">
+        <Link to="/loginlanding">
+          <FlatButton label="Back to Nav Page" primary={true} />
+        </Link>
+        <div className="reporting-info">
+          <div className="screening-chart-title">
+            <div className="intro-statement">
+              Review your most recent screening data and discuss any high risk
+              results with your doctor.
+            </div>
+          </div>
+
           {this.props.currentScreeningData.map((val, i) => (
             <div key={i}>
-              <div className="screening-chart-title">
-                Review your most recent screening data discuss any high risk
-                results with your doctor.
-              </div>
-
-              <div className="date-of-screening-wrapper">
-                <div className="screening-title">
-                  Date of Screening :{" "}
+              <div className="screening-date-wrapper">
+                <div className="screening-date">
+                  Date of Screening :
                   {val.date_of_screening
                     .split("")
                     .splice(0, 10)
                     .join("")}
+                  <div className="screening-measurement">Measurement</div>
+                  <div> Risk Level</div>
                 </div>
-                <div className="screening-measurement">Measurement</div>
-                <div> Risk Level</div>
               </div>
 
               <div className="waist-circumference-wrapper">
                 <div className="screening-title waist-circumference">
-                  Waist Circumference:{" "}
+                  Waist Circumference{" "}
                 </div>
                 <div className="screening-value">
                   {val.waist_circumference} in
@@ -66,7 +87,7 @@ class ReportingPage extends Component {
               </div>
 
               <div className="triglycerides-wrapper">
-                <div className="triglycerides">Triglycerides: </div>
+                <div className="triglycerides">Triglycerides </div>
                 <div className="screening-value">{val.triglyceride} mg/dL </div>
 
                 {val.triglyceride >= 150 ? (
@@ -131,6 +152,7 @@ class ReportingPage extends Component {
                   </div>
                 )}
               </div>
+
               <div>
                 {(val.gender === "Male" && val.waist_circumference >= 40) ||
                 (val.gender === "Female" && val.waist_circumference >= 35) ? (
@@ -247,25 +269,7 @@ class ReportingPage extends Component {
                 below with your physician for an in-depth analysis of your
                 health history.
               </div>
-              <div className="chart-design">
-                <div className="chart waist">
-                  <WaistCircumferenceChart />
-                </div>
-                <div className="chart triglycerides">
-                  <TriglyceridesChart />
-                </div>
-                <div className="chart cholesterol">
-                  <CholesterolChart />
-                </div>
-
-                <div className="chart bloodpressure">
-                  <BloodPressureChart />
-                </div>
-
-                <div className="chart sugar">
-                  <BloodSugarChart />
-                </div>
-              </div>
+              <PaperChart />
             </div>
           ))}
         </div>
@@ -279,3 +283,29 @@ const mapStateToProps = state => ({ ...state.screeningdataReducer });
 export default connect(mapStateToProps, { getReportingScreeningData })(
   ReportingPage
 );
+
+{
+  /* <div className="chart-design">
+                <div className="chart waist">
+                  <WaistCircumferenceChart />
+                </div>
+
+                <div className="chart triglycerides">
+                  <TriglyceridesChart />
+                </div>
+
+                <div className="chart cholesterol">
+                  <CholesterolChart />
+                </div>
+
+                <div className="chart bloodpressure">
+                  <BloodPressureChart />
+                </div>
+
+                <div className="chart sugar">
+                  <BloodSugarChart />
+                </div> */
+}
+{
+  /* </div> */
+}

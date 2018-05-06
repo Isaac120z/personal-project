@@ -1,4 +1,11 @@
-.registration-box {
-  margin-top: 0 auto;
-  padding: 20px;
+body {
+  background: white;
+}
+
+.registration-page {
+  display: grid;
+  background: linear-gradient(to top, #174666, #dfddd5);
+  font-family: "Lucida Sans";
+  grid-template-columns: auto;
+  padding-top: 5%;
 }

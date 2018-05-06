@@ -1,104 +1,118 @@
-.reporting-form {
+.reporting-page {
   display: grid;
-  grid-template-columns: 10% 75% 10%;
-  justify-content: space-between;
+  background: linear-gradient(to top, #174666, #dfddd5);
+  font-family: "Lucida Sans";
+  grid-template-columns: auto;
+  padding-top: 5%;
 }
 
-.screening-chart-title {
-  /* grid-template-columns: 40% 30% 30%; */
-  /* border: 0.1rem outset black; */
+.intro-statement {
+  display: inline-grid;
+  grid-template-columns: auto;
   font-size: 20px;
-  align-self: center;
-  margin-top: 120px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin-top: 5%;
   margin-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.back-button-chart {
+  padding: 0px;
+  margin: 5%;
+}
+
+.screening-date {
+  color: white;
+  background-color: #3a2936;
+  display: grid;
+  padding: 5px;
+  grid-template-columns: 40% 30% 30%;
+  border: 0.1rem outset black;
+  font-family: "Lucida Sans";
+  margin-left: 5%;
+  margin-right: 5%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .high-risk {
-  background-color: #cfb396;
+  background-color: #c53b297c;
+  font-family: "Lucida Sans";
+  font: bold;
 }
 
 .low-risk {
-  background-color: #d2d8bd;
-}
-
-.date-of-screening-wrapper {
-  display: grid;
-  grid-template-columns: 40% 30% 30%;
-  border: 0.1rem outset black;
-  background-color: #92a99e;
-  color: white;
-  border-top-left-radius: 2px;
+  background-color: transparent;
+  font-family: "Lucida Sans";
 }
 
 .waist-circumference-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
   border: 0.1rem outset black;
+  font-family: "Lucida Sans";
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5px;
 }
 
 .triglycerides-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
   border: 0.1rem outset black;
-  /* grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-color: purple;
-  text-align: center; */
-  /* grid-column-start: 1;
-  grid-column-end: 4;
-  text-shadow: 0 1px 0 black;
-  justify-self: stretch;
-  text-align: center;
-  background-color: blue; */
+  font-family: "Lucida Sans";
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5px;
 }
 
 .cholesterol-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
   border: 0.1rem outset black;
+  font-family: "Lucida Sans";
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5px;
 }
 
 .blood-pressure-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
   border: 0.1rem outset black;
+  font-family: "Lucida Sans";
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5px;
 }
 
 .blood-sugar-wrapper {
   display: grid;
   grid-template-columns: 40% 30% 30%;
   border: 0.1rem outset black;
+  font-family: "Lucida Sans";
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
-
-/* .screening-chart-title {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  text-shadow: 0 1px 0 black;
-  justify-self: stretch;
-  text-align: center;
-  background-color: blue;
-  padding: 10px;
-} */
-
-/* .chart-design {
-  margin: 100%;
-} */
 
 .high-risk-recommendation {
   border: 2px outset #d76740;
   border-radius: 5px;
-  /* box-shadow: 0 0 0 1px #a8bf9c; */
   outline-offset: 0.5rem;
-  padding: 15px;
-  margin: 5%;
+  padding: 10px;
+  color: white;
+  margin: 2% 10% 1% 10%;
   font-family: "Lucida Sans";
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0.5px;
-  background-color: #fffffd;
+  background-color: #3a2936;
 }
 
 .mets-script {
@@ -106,16 +120,19 @@
   border-radius: 5px;
   font-family: "Lucida Sans";
   margin: 2%;
+  color: white;
   padding: 15px;
-  background-color: #fffffd;
+  background-color: transparent;
 }
 
 .graph-script {
-  /* border: 0.5rem outset #274a53;
-  box-shadow: 0 0 0 1px skyblue; */
+  border: 2px outset #e5d8bb;
+  border-radius: 5px;
+  margin: 2%;
+  color: white;
+  padding: 15px;
+  background-color: transparent;
   font-family: "Lucida Sans";
-  /* background-color: #fffffd; */
-  /* border-radius: 10px; */
 }
 
 .chart {

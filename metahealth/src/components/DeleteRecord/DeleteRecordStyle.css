@@ -1,15 +1,16 @@
-.all-info {
-  display: flex;
+.delete-page {
+  padding: 100px;
   color: red;
+}
+
+.delete-box {
+  display: flex;
 }
 
 .box {
   box-sizing: border-box;
+  width: 100%;
   justify-content: center;
   border: solid #515b5a 2px;
   border-radius: 5px;
-}
-
-.back-button {
-  padding: 50px;
 }
