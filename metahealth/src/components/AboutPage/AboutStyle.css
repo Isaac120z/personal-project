@@ -13,29 +13,49 @@
   /* align-items: center; */
 }
 
+.freq-questions {
+  margin-left: 100px;
+  padding-top: 50px;
+}
+
 .opening {
   font-family: "Lucida Sans";
-  padding: 100px;
-  color: #3a2936;
+  margin-left: 100px;
+  margin-right: 100px;
+  /* color: #3a2936; */
   font-weight: 700;
   line-height: 20px;
-  /* background-color: #3a2936; */
+  background-color: white;
+  border: 2px outset #e5d8bb;
+  border-radius: 5px;
+  padding: 10px;
 
   justify-content: center;
   align-items: center;
   align-content: center;
 }
 
-.Question-one {
-  margin-left: 20px;
+.question-one {
+  margin-left: 100px;
+  margin-right: 100px;
 }
-.Question-two {
+.question-two {
+  margin-left: 100px;
+  margin-right: 100px;
 }
-.Question-three {
+.question-three {
+  margin-left: 100px;
+  margin-right: 100px;
 }
-.Question-four {
+.question-four {
+  margin-left: 100px;
+  margin-right: 100px;
 }
-.Question-five {
+.question-five {
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .question-six {
+  margin-left: 100px;
+  margin-right: 100px;
 }

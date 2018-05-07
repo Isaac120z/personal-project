@@ -1,9 +1,8 @@
 .reporting-page {
   display: grid;
-  background: linear-gradient(to top, #174666, #dfddd5);
+  background: whitesmoke;
   font-family: "Lucida Sans";
   grid-template-columns: auto;
-  padding-top: 5%;
 }
 
 .intro-statement {
@@ -120,7 +119,7 @@
   border-radius: 5px;
   font-family: "Lucida Sans";
   margin: 2%;
-  color: white;
+  color: #3a2936;
   padding: 15px;
   background-color: transparent;
 }
@@ -129,7 +128,7 @@
   border: 2px outset #e5d8bb;
   border-radius: 5px;
   margin: 2%;
-  color: white;
+  color: #3a2936;
   padding: 15px;
   background-color: transparent;
   font-family: "Lucida Sans";

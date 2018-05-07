@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import LoginLandingStyle from "./LoginLandingStyle.css";
 import { getReportingScreeningData } from "../../ducks/screeningdataReducer";
+import ChartDataLoginLanding from "./chart-data.png";
+import RecordResults from "./record.png";
+import UpdatePicture from "./update.png";
 
 import Checkout from "../Checkout/Checkout";
 import Paper from "material-ui/Paper";
@@ -42,6 +45,7 @@ class LoginLanding extends Component {
         </div>
         <div className="info-box">
           <div className="box-one">
+            <img className="create-record-pic" src={RecordResults} />
             <div />
             <div className="text-one">Enter new screening data</div>
             <Link to="/Registration">
@@ -49,6 +53,7 @@ class LoginLanding extends Component {
             </Link>
           </div>
           <div className="box-two">
+            <img className="chart-login-landing" src={ChartDataLoginLanding} />
             <div />
             <div className="text-one">
               Review results from previous screening
@@ -61,6 +66,7 @@ class LoginLanding extends Component {
           </div>
 
           <div className="box-three">
+            <img className="update-profile-pic-landing" src={UpdatePicture} />
             <div />
             <div className="text-one">
               Update or delete previous screening data

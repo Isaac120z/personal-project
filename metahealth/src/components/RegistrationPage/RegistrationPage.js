@@ -53,40 +53,46 @@ class RegistrationPage extends Component {
         <div className="data-box">
           <div className="gender-box screen-row">
             <p> Select male or female</p>
-            <div>
-              <RaisedButton
-                value={this.state.gender}
-                onClick={() => this.handleRegistration("gender", "Male")}
-                label="Male"
-                // labelColor={this.state.labelColor.toString()}
-              />
+            <div className="input-box">
+              <div>
+                <RaisedButton
+                  value={this.state.gender}
+                  onClick={() => this.handleRegistration("gender", "Male")}
+                  label="Male"
+                  // labelColor={this.state.labelColor.toString()}
+                />
 
-              <RaisedButton
-                value={this.state.gender}
-                onClick={() => this.handleRegistration("gender", "Female")}
-                label="Female"
-              />
+                <RaisedButton
+                  value={this.state.gender}
+                  onClick={() => this.handleRegistration("gender", "Female")}
+                  label="Female"
+                />
+              </div>
             </div>
           </div>
           <div className="screening-date-box screen-row">
             <p>Enter New Screening Datevin the following format "YYYY-DD-MM"</p>
-            <input
-              placeholder="YYYY-DD-MM"
-              value={this.state.screeningDate}
-              onChange={e =>
-                this.handleRegistration("screeningDate", e.target.value)
-              }
-            />
+            <div className="input-box">
+              <input
+                placeholder="YYYY-DD-MM"
+                value={this.state.screeningDate}
+                onChange={e =>
+                  this.handleRegistration("screeningDate", e.target.value)
+                }
+              />
+            </div>
           </div>
           <div className="waist-circumference-box screen-row">
             <p> Enter waist circumference measuring in inches</p>
-            <input
-              placeholder="Waist Circumference"
-              value={this.state.waistCircumference}
-              onChange={e =>
-                this.handleRegistration("waistCircumference", e.target.value)
-              }
-            />
+            <div className="input-box">
+              <input
+                placeholder="Waist Circumference"
+                value={this.state.waistCircumference}
+                onChange={e =>
+                  this.handleRegistration("waistCircumference", e.target.value)
+                }
+              />
+            </div>
           </div>
           <div className="triglycerides-box screen-row">
             <p>
@@ -94,68 +100,81 @@ class RegistrationPage extends Component {
               Enter triglycerides measurement in milligarms per deciliter
               (mg/dL)
             </p>
-            <input
-              placeholder="Triglycerides"
-              value={this.state.triglycerides}
-              onChange={e =>
-                this.handleRegistration("triglycerides", e.target.value)
-              }
-            />
+            <div className="input-box">
+              <input
+                placeholder="Triglycerides"
+                value={this.state.triglycerides}
+                onChange={e =>
+                  this.handleRegistration("triglycerides", e.target.value)
+                }
+              />
+            </div>
           </div>
           <div className="cholesterol-box screen-row">
             <p> Enter HDL cholesterol in milligrams per deciliter (mg/dL)</p>
-            <input
-              placeholder="HDL Cholesterol"
-              value={this.state.cholesterol}
-              onChange={e =>
-                this.handleRegistration("cholesterol", e.target.value)
-              }
-            />
+            <div className="input-box">
+              <input
+                placeholder="HDL Cholesterol"
+                value={this.state.cholesterol}
+                onChange={e =>
+                  this.handleRegistration("cholesterol", e.target.value)
+                }
+              />
+            </div>
           </div>
           <div className="systolic-box screen-row">
             <p>
               {" "}
               Enter systolic blood pressure in millimeters of mercury (mm Hg)
             </p>
-            <input
-              placeholder="Blood Pressure Systolic"
-              value={this.state.bloodPressureSystolic}
-              onChange={e =>
-                this.handleRegistration("bloodPressureSystolic", e.target.value)
-              }
-            />
+            <div className="input-box">
+              <input
+                placeholder="Blood Pressure Systolic"
+                value={this.state.bloodPressureSystolic}
+                onChange={e =>
+                  this.handleRegistration(
+                    "bloodPressureSystolic",
+                    e.target.value
+                  )
+                }
+              />
+            </div>
           </div>
           <div className="diastolic-box screen-row">
             <p>
               {" "}
               Enter diastolic blood pressure in millimeters of mercury (mm Hg)
             </p>
-            <input
-              placeholder="Blood Pressure Diastolic"
-              value={this.state.bloodPressureDiastolic}
-              onChange={e =>
-                this.handleRegistration(
-                  "bloodPressureDiastolic",
-                  e.target.value
-                )
-              }
-            />
+            <div className="input-box">
+              <input
+                placeholder="Blood Pressure Diastolic"
+                value={this.state.bloodPressureDiastolic}
+                onChange={e =>
+                  this.handleRegistration(
+                    "bloodPressureDiastolic",
+                    e.target.value
+                  )
+                }
+              />
+            </div>
           </div>
           <div className="sugar-box screen-row">
             <p>
               {" "}
               Enter FASTING blood sugar in milligrams per deciliter (mg/dL){" "}
             </p>
-            <input
-              placeholder="Blood Sugar"
-              value={this.state.bloodSugar}
-              onChange={e =>
-                this.handleRegistration("bloodSugar", e.target.value)
-              }
-            />
+            <div className="input-box">
+              <input
+                placeholder="Blood Sugar"
+                value={this.state.bloodSugar}
+                onChange={e =>
+                  this.handleRegistration("bloodSugar", e.target.value)
+                }
+              />
+            </div>
           </div>
         </div>
-        <div>
+        <div className="save-button">
           <RaisedButton
             onClick={e => {
               this.props

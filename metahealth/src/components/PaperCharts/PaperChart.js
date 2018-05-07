@@ -33,7 +33,7 @@ class PaperChart extends React.Component {
   render() {
     return (
       <div className="paper-chart">
-        <div className="waist-circumference">
+        <div className="waist-circumference-paper-chart">
           <Card
             waistexpanded={this.state.waistexpanded}
             onExpandChange={this.handleWaistExpandChange}
@@ -42,6 +42,7 @@ class PaperChart extends React.Component {
               title="Waist Circumference Chart"
               actAsExpander={true}
               showExpandableButton={true}
+              titleColor="#3a2936"
             />
 
             <CardMedia expandable={true}>
@@ -55,7 +56,7 @@ class PaperChart extends React.Component {
           </Card>
         </div>
 
-        <div className="triglycerides">
+        <div className="triglycerides-paper-chart">
           <Card
             expanded={this.state.expanded}
             onExpandChange={this.handleExpandChange}
@@ -75,7 +76,7 @@ class PaperChart extends React.Component {
             </CardText>
           </Card>
         </div>
-        <div className="cholesterol">
+        <div className="cholesterol-paper-chart">
           <Card
             expanded={this.state.expanded}
             onExpandChange={this.handleExpandChange}
@@ -95,7 +96,7 @@ class PaperChart extends React.Component {
             </CardText>
           </Card>
         </div>
-        <div className="blood-pressure">
+        <div className="blood-pressure-paper-chart">
           <Card
             expanded={this.state.expanded}
             onExpandChange={this.handleExpandChange}
@@ -117,7 +118,7 @@ class PaperChart extends React.Component {
           </Card>
         </div>
 
-        <div className="blood-sugar">
+        <div className="blood-sugar-paper-chart">
           <Card
             expanded={this.state.expanded}
             onExpandChange={this.handleExpandChange}

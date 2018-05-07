@@ -67,9 +67,7 @@ class ReportingPage extends Component {
               </div>
 
               <div className="waist-circumference-wrapper">
-                <div className="screening-title waist-circumference">
-                  Waist Circumference{" "}
-                </div>
+                <div className="screening-title">Waist Circumference </div>
                 <div className="screening-value">
                   {val.waist_circumference} in
                 </div>

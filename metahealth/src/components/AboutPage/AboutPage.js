@@ -40,7 +40,7 @@ class AboutPage extends Component {
           for heart disease.
         </div>
 
-        <div>Frequently asked questions:</div>
+        <div className="freq-questions">Frequently asked questions:</div>
         <div className="question-one">
           <Card
             waistexpanded={this.state.expanded}

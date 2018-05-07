@@ -5,6 +5,9 @@ import LandingStyle from "./LandingStyle.css";
 import { getReportingScreeningData } from "../../ducks/screeningdataReducer";
 import Checkout from "../Checkout/Checkout";
 import Paper from "material-ui/Paper";
+import KeepTrack from "./keep-track.png";
+import ChartDataPic from "./chart-data.png";
+import UnderstandPic from "./understand.png";
 
 class LandingPage extends Component {
   render() {
@@ -14,6 +17,10 @@ class LandingPage extends Component {
 
         <div className="info-box">
           <div className="box-one">
+            <div>
+              <img className="image-keep-track" src={KeepTrack} />
+            </div>
+
             <div className="text-one">
               A place to keep track of your biometric screening reults
             </div>
@@ -24,7 +31,9 @@ class LandingPage extends Component {
           </div>
 
           <div className="box-two">
+            <img className="understand-pic" src={UnderstandPic} />
             <div className="text-one">Understand your health risks</div>
+
             <div className="text-two">
               Enter biometric screening results from your annual physical and
               access immmediate healh risk data.
@@ -32,6 +41,7 @@ class LandingPage extends Component {
           </div>
 
           <div className="box-three">
+            <img className="chart-data-pic-landing" src={ChartDataPic} />
             <div className="text-one">
               View charts showing year over year data
             </div>

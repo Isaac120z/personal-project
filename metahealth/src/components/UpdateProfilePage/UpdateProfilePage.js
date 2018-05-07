@@ -167,7 +167,7 @@ class UpdateProfilePage extends Component {
                     </div>
                   )}
                 </div>
-                <div className="box cholesterol">
+                <div className="box triglyceride">
                   <h5>Cholesterol</h5>
                   {this.state.editData ? (
                     <input

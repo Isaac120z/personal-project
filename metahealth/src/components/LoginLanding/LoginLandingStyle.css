@@ -23,3 +23,18 @@
   color: black;
   font-family: "Lucida Sans";
 }
+
+.create-record-pic {
+  height: 100px;
+  width: 100px;
+}
+
+.chart-login-landing {
+  height: 100px;
+  width: 100px;
+}
+
+.update-profile-pic-landing {
+  height: 100px;
+  width: 100px;
+}

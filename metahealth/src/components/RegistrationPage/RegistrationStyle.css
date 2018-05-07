@@ -1,21 +1,23 @@
 .registration-page {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to top, #174666, #dfddd5);
+  background: whitesmoke;
   font-family: "Lucida Sans";
   /* grid-template-columns: auto; */
   /* padding-top: 5%; */
-  height: 92vh;
-  padding-top: 50px;
+
+  /* padding-top: 50px; */
 }
 
 .data-box {
+  align-items: center;
 }
 
 .gender-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px;
 }
 
 .screen-row {
@@ -26,7 +28,47 @@
   border: 2px solid #3a2936;
   border-radius: 4px;
   padding-left: 5px;
+  align-items: center;
 }
 .screen-row input {
   width: 169px;
+  align-items: center;
+}
+
+.screening-date-box {
+  margin: 5px;
+}
+
+.waist-circumference-box {
+  margin: 5px;
+}
+
+.triglycerides-box {
+  margin: 5px;
+}
+
+.cholesterol-box {
+  margin: 5px;
+}
+
+.systolic-box {
+  margin: 5px;
+}
+
+.diastolic-box {
+  margin: 5px;
+}
+
+.sugar-box {
+  margin: 5px;
+}
+
+.save-button {
+  align-items: right;
+  justify-content: right;
+  /* margin-left: 50%; */
+}
+
+.input-box {
+  padding-right: 5px;
 }

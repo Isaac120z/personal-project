@@ -1,3 +1,23 @@
 .paper-chart {
   padding: 2%;
 }
+
+.waist-circumference-paper-chart {
+  padding: 5px;
+}
+
+.triglycerides-paper-chart {
+  padding: 5px;
+}
+
+.cholesterol-paper-chart {
+  padding: 5px;
+}
+
+.blood-pressure-paper-chart {
+  padding: 5px;
+}
+
+.blood-sugar-paper-chart {
+  padding: 5px;
+}
