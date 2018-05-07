@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import UpdateProfilePageStyle from "./UpdateProfilePageStyle.css";
 import DeleteRecord from "../DeleteRecord/DeleteRecord";
 import { Link } from "react-router-dom";
+import FlatButton from "material-ui/FlatButton";
+import swal from "sweetalert";
 
 import {
   getScreeningData,
@@ -69,6 +71,7 @@ class UpdateProfilePage extends Component {
       this.props.screeningData[this.state.currIndex].id
     );
     this.handleEditSwitch();
+    swal("Success!", "Your screening data is saved", "success");
   }
 
   componentDidMount() {
@@ -83,167 +86,182 @@ class UpdateProfilePage extends Component {
     console.log(this.props.screeningData);
 
     return (
-      <div className="all-records">
-        <Link to="/loginlanding">
-          <button className="back-button">BACK</button>
-        </Link>
-        <div>
-          <DeleteRecord />
+      <div>
+        <div className="nav-button">
+          <Link to="/loginlanding">
+            <FlatButton label="Back to Nav Page" primary={true} />
+          </Link>
         </div>
-        <select value={this.state.currIndex} onChange={this.handleChange}>
-          {this.props.screeningData.map((val, i) => {
-            return (
-              <option key={i} value={i}>
-                {val.date_of_screening
-                  .split("")
-                  .splice(0, 10)
-                  .join("")}
-                {/* check for extra 0s */}
-              </option>
-            );
-          })}
-        </select>
-        <div className="update-box">
-          {this.state.editData ? (
-            <button onClick={() => this.handleUpdate()}>SAVE</button>
-          ) : (
-            <button onClick={() => this.handleEditSwitch()}>EDIT</button>
-          )}
+        <div className="all-records">
+          {/* <Link to="/loginlanding">
+          <FlatButton label="Back to Nav Page" primary={true} />
+        </Link> */}
+          <div className="update-box">
+            <div>Update by clicking "edit" then "save"</div>
+            <select value={this.state.currIndex} onChange={this.handleChange}>
+              {this.props.screeningData.map((val, i) => {
+                return (
+                  <option key={i} value={i}>
+                    {val.date_of_screening
+                      .split("")
+                      .splice(0, 10)
+                      .join("")}
+                    {/* check for extra 0s */}
+                  </option>
+                );
+              })}
+            </select>
 
-          {this.props.screeningData[this.state.currIndex] ? (
-            <div>
-              <div className="box screening-date">
-                <h5>Screening Date</h5>
-                {this.props.screeningData[
-                  this.state.currIndex
-                ].date_of_screening
-                  .split("")
-                  .splice(0, 10)
-                  .join("")}
-              </div>
-              <div className="box waist-circumference">
-                <h5>Waist Circumference</h5>
-                {this.state.editData ? (
-                  <input
-                    type="number"
-                    value={this.state.waist_circumference}
-                    onChange={e =>
-                      this.inputChange("waist_circumference", e.target.value)
-                    }
-                  />
-                ) : (
-                  <div>
-                    {
-                      this.props.screeningData[this.state.currIndex]
-                        .waist_circumference
-                    }
-                  </div>
-                )}
-              </div>
-              <div className="box triglyceride">
-                <h5>Triglyceride</h5>
-                {this.state.editData ? (
-                  <input
-                    type="number"
-                    value={this.state.triglyceride}
-                    onChange={e =>
-                      this.inputChange("triglyceride", e.target.value)
-                    }
-                  />
-                ) : (
-                  <div>
-                    {
-                      this.props.screeningData[this.state.currIndex]
-                        .triglyceride
-                    }
-                  </div>
-                )}
-              </div>
-              <div className="box cholesterol">
-                <h5>Cholesterol</h5>
-                {this.state.editData ? (
-                  <input
-                    type="number"
-                    value={this.state.cholesterol}
-                    onChange={e =>
-                      this.inputChange("cholesterol", e.target.value)
-                    }
-                  />
-                ) : (
-                  <div>
-                    {this.props.screeningData[this.state.currIndex].cholesterol}
-                  </div>
-                )}
-              </div>
+            {this.state.editData ? (
+              <button onClick={() => this.handleUpdate()}>SAVE</button>
+            ) : (
+              <button onClick={() => this.handleEditSwitch()}>EDIT</button>
+            )}
 
-              <div className="box blood-pressure-sys">
-                <h5>Blood Pressure Systolic</h5>
-                {this.state.editData ? (
-                  <input
-                    type="number"
-                    value={this.state.blood_pressure_systolic}
-                    onChange={e =>
-                      this.inputChange(
-                        "blood_pressure_systolic",
-                        e.target.value
-                      )
-                    }
-                  />
-                ) : (
-                  <div>
-                    {
-                      this.props.screeningData[this.state.currIndex]
-                        .blood_pressure_systolic
-                    }
-                  </div>
-                )}
-              </div>
+            {this.props.screeningData[this.state.currIndex] ? (
+              <div>
+                <div className="box screening-date-update-page">
+                  <h5>Screening Date</h5>
+                  {this.props.screeningData[
+                    this.state.currIndex
+                  ].date_of_screening
+                    .split("")
+                    .splice(0, 10)
+                    .join("")}
+                </div>
+                <div className="box waist-circumference">
+                  <h5>Waist Circumference</h5>
+                  {this.state.editData ? (
+                    <input
+                      type="number"
+                      value={this.state.waist_circumference}
+                      onChange={e =>
+                        this.inputChange("waist_circumference", e.target.value)
+                      }
+                    />
+                  ) : (
+                    <div>
+                      {
+                        this.props.screeningData[this.state.currIndex]
+                          .waist_circumference
+                      }
+                    </div>
+                  )}
+                </div>
+                <div className="box triglyceride">
+                  <h5>Triglyceride</h5>
+                  {this.state.editData ? (
+                    <input
+                      type="number"
+                      value={this.state.triglyceride}
+                      onChange={e =>
+                        this.inputChange("triglyceride", e.target.value)
+                      }
+                    />
+                  ) : (
+                    <div>
+                      {
+                        this.props.screeningData[this.state.currIndex]
+                          .triglyceride
+                      }
+                    </div>
+                  )}
+                </div>
+                <div className="box cholesterol">
+                  <h5>Cholesterol</h5>
+                  {this.state.editData ? (
+                    <input
+                      type="number"
+                      value={this.state.cholesterol}
+                      onChange={e =>
+                        this.inputChange("cholesterol", e.target.value)
+                      }
+                    />
+                  ) : (
+                    <div>
+                      {
+                        this.props.screeningData[this.state.currIndex]
+                          .cholesterol
+                      }
+                    </div>
+                  )}
+                </div>
 
-              <div className="box blood-pressure-dia">
-                <h5>Blood Pressure Diastolic</h5>
-                {this.state.editData ? (
-                  <input
-                    type="number"
-                    value={this.state.blood_pressure_diastolic}
-                    onChange={e =>
-                      this.inputChange(
-                        "blood_pressure_diastolic",
-                        e.target.value
-                      )
-                    }
-                  />
-                ) : (
-                  <div>
-                    {
-                      this.props.screeningData[this.state.currIndex]
-                        .blood_pressure_diastolic
-                    }
-                  </div>
-                )}
-              </div>
+                <div className="box blood-pressure-sys">
+                  <h5>Blood Pressure Systolic</h5>
+                  {this.state.editData ? (
+                    <input
+                      type="number"
+                      value={this.state.blood_pressure_systolic}
+                      onChange={e =>
+                        this.inputChange(
+                          "blood_pressure_systolic",
+                          e.target.value
+                        )
+                      }
+                    />
+                  ) : (
+                    <div>
+                      {
+                        this.props.screeningData[this.state.currIndex]
+                          .blood_pressure_systolic
+                      }
+                    </div>
+                  )}
+                </div>
 
-              <div className="box blood-sugar">
-                <h5>Blood Sugar</h5>
-                {this.state.editData ? (
-                  <input
-                    type="number"
-                    value={this.state.blood_sugar}
-                    onChange={e =>
-                      this.inputChange("blood_sugar", e.target.value)
-                    }
-                  />
-                ) : (
-                  <div>
-                    {this.props.screeningData[this.state.currIndex].blood_sugar}
-                  </div>
-                )}
-              </div>
+                <div className="box blood-pressure-dia">
+                  <h5>Blood Pressure Diastolic</h5>
+                  {this.state.editData ? (
+                    <input
+                      type="number"
+                      value={this.state.blood_pressure_diastolic}
+                      onChange={e =>
+                        this.inputChange(
+                          "blood_pressure_diastolic",
+                          e.target.value
+                        )
+                      }
+                    />
+                  ) : (
+                    <div>
+                      {
+                        this.props.screeningData[this.state.currIndex]
+                          .blood_pressure_diastolic
+                      }
+                    </div>
+                  )}
+                </div>
 
-              {/* <button onClick={() => this.handleUpdate(this.props.screeningData[this.state.currIndex].id)}>UPDATE</button> */}
-            </div>
-          ) : (
-            "No data"
-          )}
+                <div className="box blood-sugar">
+                  <h5>Blood Sugar</h5>
+                  {this.state.editData ? (
+                    <input
+                      type="number"
+                      value={this.state.blood_sugar}
+                      onChange={e =>
+                        this.inputChange("blood_sugar", e.target.value)
+                      }
+                    />
+                  ) : (
+                    <div>
+                      {
+                        this.props.screeningData[this.state.currIndex]
+                          .blood_sugar
+                      }
+                    </div>
+                  )}
+                </div>
+
+                {/* <button onClick={() => this.handleUpdate(this.props.screeningData[this.state.currIndex].id)}>UPDATE</button> */}
+              </div>
+            ) : (
+              "No data"
+            )}
+          </div>
+          <div>
+            <DeleteRecord />
+          </div>
         </div>
       </div>
     );

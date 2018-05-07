@@ -58,34 +58,30 @@ class DeleteRecord extends Component {
   render() {
     return (
       <div className="delete-page">
-        Select Screening Date
-        <select value={this.state.currIndex} onChange={this.handleChange}>
-          {console.log(this.props.screeningData)}
-          {this.props.screeningData.map((val, i) => {
-            return (
-              <option key={i} value={i}>
-                {val.date_of_screening
-                  .split("")
-                  .splice(0, 10)
-                  .join("")}
-              </option>
-            );
-          })}
-        </select>
-        {/* <button
-          onClick={() =>
-            this.props.deleteScreeningData(
-              this.state.currScreening.user_id,
-              this.state.currScreening.id
-            )
-          }
-        >
-          Delete Record
-        </button> */}
         <div className="delete-box">
+          <div>
+            <div>
+              Select screening date then click "delete" to remove record
+            </div>
+            <select value={this.state.currIndex} onChange={this.handleChange}>
+              {console.log(this.props.screeningData)}
+              {this.props.screeningData.map((val, i) => {
+                return (
+                  <option key={i} value={i}>
+                    {val.date_of_screening
+                      .split("")
+                      .splice(0, 10)
+                      .join("")}
+                  </option>
+                );
+              })}
+            </select>
+            <button onClick={() => this.confirmScreen()}>DELETE</button>
+          </div>
+
           {this.props.screeningData[this.state.currIndex] ? (
             <div>
-              <div className="box screening-date">
+              <div className="box screening-date-delete">
                 <h5>Screening Date</h5>
                 {this.props.screeningData[
                   this.state.currIndex
@@ -144,10 +140,6 @@ class DeleteRecord extends Component {
                   {this.props.screeningData[this.state.currIndex].blood_sugar}
                 </div>
               </div>
-              <RaisedButton
-                onClick={() => this.confirmScreen()}
-                label="Delete"
-              />
             </div>
           ) : (
             "No data"

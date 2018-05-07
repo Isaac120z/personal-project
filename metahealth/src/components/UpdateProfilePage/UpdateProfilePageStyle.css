@@ -1,15 +1,28 @@
-.all-info {
+.all-records {
+  background: linear-gradient(to top, #174666, #dfddd5);
+  font-family: "Lucida Sans";
+  /* padding: 30px; */
+  padding-top: 100px;
   display: flex;
-  color: red;
+  flex-direction: row;
+  height: 98vh;
+  padding-top: 10vh;
 }
 
 .box {
-  box-sizing: border-box;
-  justify-content: center;
-  border: solid #515b5a 2px;
-  border-radius: 5px;
+  /* width: 25%; */
+  display: flex;
+  justify-content: left;
+  /* align-items: center; */
+  border: 2px solid #3a2936;
+  border-radius: 4px;
+  padding-right: 5px;
+  font-size: 16px;
+  margin-right: 30px;
+  /* padding-right: 10px; */
 }
 
-.back-button {
-  padding: 50px;
+.nav-button {
+  display: grid;
+  margin-top: 50px;
 }

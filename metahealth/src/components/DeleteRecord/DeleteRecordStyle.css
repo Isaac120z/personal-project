@@ -1,16 +1,28 @@
 .delete-page {
-  padding: 100px;
-  color: red;
+  display: flex;
+  flex-direction: row;
+  /* background: linear-gradient(to top, #174666, #dfddd5); */
+  font-family: "Lucida Sans";
+  margin-left: 50px;
+  /* padding-top: 50px; */
 }
 
-.delete-box {
+.screening-date-delete {
   display: flex;
 }
 
 .box {
-  box-sizing: border-box;
-  width: 100%;
-  justify-content: center;
-  border: solid #515b5a 2px;
-  border-radius: 5px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #3a2936;
+  border-radius: 4px;
+  /* padding-left: 5px; */
+  font-size: 16px;
+  /* padding-right: 10px; */
 }
+
+/* .box input {
+  width: 169px;
+} */

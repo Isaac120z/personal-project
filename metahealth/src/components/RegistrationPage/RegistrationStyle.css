@@ -1,11 +1,32 @@
-body {
-  background: white;
-}
-
 .registration-page {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(to top, #174666, #dfddd5);
   font-family: "Lucida Sans";
-  grid-template-columns: auto;
-  padding-top: 5%;
+  /* grid-template-columns: auto; */
+  /* padding-top: 5%; */
+  height: 92vh;
+  padding-top: 50px;
+}
+
+.data-box {
+}
+
+.gender-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.screen-row {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #3a2936;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+.screen-row input {
+  width: 169px;
 }
